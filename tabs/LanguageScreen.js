@@ -1,5 +1,7 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
+import RNLanguages from 'react-native-languages';
+import I18n from 'react-native-i18n';
 
 
 export default class LanguageScreen extends React.Component {
@@ -13,9 +15,30 @@ export default class LanguageScreen extends React.Component {
     }
     constructor(props) {
         super(props)
+
+        I18n.fallbacks = true;
+
+        I18n.translations = {
+            en: {
+                greeting: 'Hi !',
+            },
+            fr: {
+                greeting: 'Bonjour!',
+            },
+            sv: {
+                greeting: 'Hallå !',
+            },
+            de: {
+                greeting: 'Hallo !',
+            },
+            es: {
+                greeting: 'Hola !',
+            },
+            ze: {
+                greeting: '你好',
+            }
+        };
     }
-
-
 
     render() {
         return <View style={
@@ -28,7 +51,12 @@ export default class LanguageScreen extends React.Component {
             <Text style={{
                 paddingTop: 30,
                 fontSize: 30
-            }}>Lang</Text>
+            }}>Language : {RNLanguages.language}</Text>
+            <Text style={{
+                paddingTop: 30,
+                fontSize: 30
+            }}>{I18n.t('greeting')}</Text>
+
         </View>
     }
 }

@@ -3,6 +3,8 @@ package com.phonegap;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import com.reactcommunity.rnlanguages.RNLanguagesPackage;
 import com.robinpowered.react.battery.DeviceBatteryPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.airbnb.android.react.maps.MapsPackage;
@@ -26,6 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNI18nPackage(),
+            new RNLanguagesPackage(),
             new DeviceBatteryPackage(),
             new ReactNativeContacts(),
             new MapsPackage()
