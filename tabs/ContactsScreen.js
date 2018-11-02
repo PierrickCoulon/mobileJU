@@ -10,7 +10,7 @@ export default class ContactsScreen extends React.Component {
     static navigationOptions = {
         tabBarLabel: 'Contacts',
         tabBarIcon: ({ tintColor }) => (
-            <Image source={require('../images/location.png')}
+            <Image source={require('../images/contacts.png')}
                 style={{ width: 22, height: 22, tintColor: 'black' }}>
             </Image>
         )
