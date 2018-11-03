@@ -8,19 +8,14 @@ import BatteryController from './controllers/BatteryController';
 import ContactsController from './controllers/ContactsController';
 import VibrationController from './controllers/VibrationController';
 import LanguageController from './controllers/LanguageController';
-// import LocationController from './controllers/LocationController';
-// import BatteryController from './controllers/BatteryController';
-// import ContactsController from './controllers/ContactsController';
-// import VibrationController from './controllers/VibrationController';
-// import LanguageController from './controllers/LanguageController';
 
 console.disableYellowBox = true
 
 var MainScreenNavigator = TabNavigator({
-  Tab1: { screen: BatteryController},
+  Tab1: { screen: VibrationController},
   Tab2: { screen: ContactsController},
   Tab3: { screen : LocationController},
-  Tab4: { screen : VibrationController},
+  Tab4: { screen : BatteryController},
   Tab5: { screen : LanguageController},
 }, {
   tabBarPosition: 'bottom',
