@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Image, View, Text } from 'react-native';
 import DeviceBattery from 'react-native-device-battery';
 import styles from '../styles/BatteryStyle';
+import BatteryView from '../views/BatteryView';
+
 
 export default class BatteryScreen extends React.Component {
 
@@ -18,14 +20,17 @@ export default class BatteryScreen extends React.Component {
         super(props)
 
         this.state = {
-            level: 0,
-            charging: false
+            levelString: "",
+            chargingString: ""
         }
 
         var onBatteryStateChanged = (state) => {
-
-            this.setState({ level: state.level })
-            this.setState({ charging: state.charging })
+            this.setState({ levelString: Math.trunc(state.level * 100) + '%' })
+            if (state.charging == true) {
+                this.setState({ chargingString: "ON" })
+            } else {
+                this.setState({ chargingString: "OFF" })
+            }
         };
 
         DeviceBattery.addListener(onBatteryStateChanged);
@@ -34,29 +39,21 @@ export default class BatteryScreen extends React.Component {
 
     componentWillMount() {
         DeviceBattery.getBatteryLevel().then(level => {
-            this.setState({ level: level })
+            this.setState({ levelString: Math.trunc(level * 100) + '%' })
 
             DeviceBattery.isCharging().then(isCharging => {
-                this.setState({ charging: isCharging })
+                if (isCharging == true) {
+                    this.setState({ chargingString: "ON" })
+                } else {
+                    this.setState({ chargingString: "OFF" })
+                }
             });
         });
     }
 
     render() {
-        var levelString = Math.trunc(this.state.level * 100) + '%'
-        var chargingString = ""
-        if (this.state.charging == true) {
-            chargingString = "ON"
-        } else {
-            chargingString = "OFF"
-        }
-        // return (
-        //     <BatteryView />
-        // );
-        return <View style={styles.container}>
-            <Text style={styles.text}>Battery Level : {levelString}</Text>
-            <Text style={styles.text}>Is charging : {chargingString}</Text>
-
-        </View>
+        return (
+            <BatteryView levelString={this.state.levelString} chargingString={this.state.chargingString} />
+        )
     }
 }

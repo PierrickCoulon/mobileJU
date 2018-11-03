@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import { View, Dimensions, Image } from 'react-native';
-import MapView from 'react-native-maps';
+import React from 'react';
+import { Dimensions, Image } from 'react-native';
 import styles from '../styles/LocationStyle';
+import LocationView from '../views/LocationView';
 
 const { width, height } = Dimensions.get('window')
-const SCREEN_HEIGHT = height
-const SCREEN_WIDTH = width
 const ASPECT_RATIO = width / height
 const LATTITUDE_DELTA = 0.0922
 const LONGTITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
@@ -77,16 +75,7 @@ export default class LocationScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <MapView style={styles.map} region={this.state.initialPosition}>
-
-                    <MapView.Marker coordinate={this.state.markerPosition}>
-                        <View style={styles.radius}>
-                            <View style={styles.marker}></View>
-                        </View>
-                    </MapView.Marker>
-                </MapView>
-            </View>
+            <LocationView reg={this.state.initialPosition} coord={this.state.markerPosition} />
         );
     }
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, View, Vibration, Image } from 'react-native';
+import {Vibration, Image } from 'react-native';
 import styles from '../styles/VibrationStyle';
+import VibrationView from '../views/VibrationView';
 
 export default class VibrationScreen extends React.Component {
     static navigationOptions = {
@@ -25,11 +26,8 @@ export default class VibrationScreen extends React.Component {
 
 
     render() {
-        return <View style={styles.container}>
-            <Image source={require('../images/vibration.png')}
-                style={styles.image}>
-            </Image>
-            <Text style={styles.text}>Vib Vib ! </Text>
-        </View>
+        return (
+            <VibrationView />
+        );
     }
 }

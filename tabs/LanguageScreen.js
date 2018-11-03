@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
-import RNLanguages from 'react-native-languages';
+import { Image } from 'react-native';
 import I18n from 'react-native-i18n';
 import styles from '../styles/LanguageStyle';
+import LanguageView from '../views/LanguageView';
+import RNLanguages from 'react-native-languages';
+
 
 export default class LanguageScreen extends React.Component {
     static navigationOptions = {
@@ -40,10 +42,8 @@ export default class LanguageScreen extends React.Component {
     }
 
     render() {
-        return <View style={styles.container}>
-            <Text style={styles.text}>Language : {RNLanguages.language}</Text>
-            <Text style={styles.text}>{I18n.t('greeting')}</Text>
-
-        </View>
+        return (
+            <LanguageView I18n={I18n.t('greeting')} lang={RNLanguages.language}/>
+        )
     }
 }

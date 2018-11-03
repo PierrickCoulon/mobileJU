@@ -1,26 +1,23 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import BatteryScreen from '../tabs/BatteryScreen'
+import styles from '../styles/BatteryStyle';
 
-const BatteryView = () => (
-    <View style={
-        {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-        }
-    }>
-        <Text style={{
-            fontSize: 30
-        }}>Battery Level : { levelString}</Text>
-        <Text style={{
-            fontSize: 30
-        }}>Is charging : {chargingString}</Text>
 
-    </View>
-);
+export default class BatteryView extends React.Component {
 
-export default BatteryView;
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.text}>Battery Level : {this.props.levelString}</Text>
+                <Text style={styles.text}>Is charging : {this.props.chargingString}</Text>
+            </View>
+        );
+    }
+}
 
 
 
