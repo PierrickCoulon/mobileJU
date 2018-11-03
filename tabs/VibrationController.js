@@ -3,7 +3,7 @@ import {Vibration, Image } from 'react-native';
 import styles from '../styles/VibrationStyle';
 import VibrationView from '../views/VibrationView';
 
-export default class VibrationScreen extends React.Component {
+export default class VibrationController extends React.Component {
     static navigationOptions = {
         tabBarLabel: 'Vibration',
         tabBarIcon: ({ tintColor }) => (

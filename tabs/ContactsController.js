@@ -4,7 +4,7 @@ import Contacts from 'react-native-contacts';
 import styles from '../styles/ContactsStyle';
 import ContactsView from '../views/ContactsView';
 
-export default class ContactsScreen extends React.Component {
+export default class ContactsController extends React.Component {
 
     static navigationOptions = {
         tabBarLabel: 'Contacts',

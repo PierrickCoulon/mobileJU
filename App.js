@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
-import LocationScreen from './tabs/LocationScreen';
-import BatteryScreen from './tabs/BatteryScreen';
-import ContactsScreen from './tabs/ContactsScreen';
-import VibrationScreen from './tabs/VibrationScreen';
-import LanguageScreen from './tabs/LanguageScreen';
+import LocationController from './tabs/LocationController';
+import BatteryController from './tabs/BatteryController';
+import ContactsController from './tabs/ContactsController';
+import VibrationController from './tabs/VibrationController';
+import LanguageController from './tabs/LanguageController';
 
 console.disableYellowBox = true
 
 var MainScreenNavigator = TabNavigator({
-  Tab1: { screen: BatteryScreen},
-  Tab2: { screen: ContactsScreen},
-  Tab3: { screen : LocationScreen},
-  Tab4: { screen : VibrationScreen},
-  Tab5: { screen : LanguageScreen},
+  Tab1: { screen: BatteryController},
+  Tab2: { screen: ContactsController},
+  Tab3: { screen : LocationController},
+  Tab4: { screen : VibrationController},
+  Tab5: { screen : LanguageController},
 }, {
   tabBarPosition: 'bottom',
   swipeEnabled: true,

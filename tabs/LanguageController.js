@@ -6,7 +6,7 @@ import LanguageView from '../views/LanguageView';
 import RNLanguages from 'react-native-languages';
 
 
-export default class LanguageScreen extends React.Component {
+export default class LanguageController extends React.Component {
     static navigationOptions = {
         tabBarLabel: 'Language',
         tabBarIcon: ({ tintColor }) => (

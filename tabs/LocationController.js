@@ -8,7 +8,7 @@ const ASPECT_RATIO = width / height
 const LATTITUDE_DELTA = 0.0922
 const LONGTITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
 
-export default class LocationScreen extends React.Component {
+export default class LocationController extends React.Component {
     static navigationOptions = {
         tabBarLabel: 'Location',
         tabBarIcon: ({ tintColor }) => (

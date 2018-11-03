@@ -5,7 +5,7 @@ import styles from '../styles/BatteryStyle';
 import BatteryView from '../views/BatteryView';
 
 
-export default class BatteryScreen extends React.Component {
+export default class BatteryController extends React.Component {
 
     static navigationOptions = {
         tabBarLabel: 'Battery',
