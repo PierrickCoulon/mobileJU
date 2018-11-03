@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
-import LocationController from './tabs/LocationController';
-import BatteryController from './tabs/BatteryController';
-import ContactsController from './tabs/ContactsController';
-import VibrationController from './tabs/VibrationController';
-import LanguageController from './tabs/LanguageController';
+
+import LocationController from './controllers/LocationController';
+import BatteryController from './controllers/BatteryController';
+import ContactsController from './controllers/ContactsController';
+import VibrationController from './controllers/VibrationController';
+import LanguageController from './controllers/LanguageController';
+// import LocationController from './controllers/LocationController';
+// import BatteryController from './controllers/BatteryController';
+// import ContactsController from './controllers/ContactsController';
+// import VibrationController from './controllers/VibrationController';
+// import LanguageController from './controllers/LanguageController';
 
 console.disableYellowBox = true
 
