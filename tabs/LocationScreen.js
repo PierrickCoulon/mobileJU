@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import { View, Dimensions, Image } from 'react-native';
 import MapView from 'react-native-maps';
+import styles from '../styles/LocationStyle';
 
 const { width, height } = Dimensions.get('window')
 const SCREEN_HEIGHT = height
@@ -14,7 +15,7 @@ export default class LocationScreen extends React.Component {
         tabBarLabel: 'Location',
         tabBarIcon: ({ tintColor }) => (
             <Image source={require('../images/location.png')}
-                style={{ width: 22, height: 22, tintColor: 'black' }}>
+                style={styles.imageNav}>
             </Image>
         )
     }
@@ -88,42 +89,5 @@ export default class LocationScreen extends React.Component {
             </View>
         );
     }
-  
-    }
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#F5FCFF'
-        },
-        map: {
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-            position: 'absolute'
-        },
-        radius: {
-            height: 50,
-            width: 50,
-            borderRadius: 50 / 2,
-            overflow: 'hidden',
-            backgroundColor: 'rgba(0, 122, 255, 0.1)',
-            borderWidth: 1,
-            borderColor: 'rgba(0, 112, 255, 0.3)',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-
-        marker: {
-            height: 20,
-            width: 20,
-            borderWidth: 3,
-            borderColor: 'white',
-            borderRadius: 20 / 2,
-            overflow: 'hidden',
-            backgroundColor: '#007AFF'
-        }
-    })
+}

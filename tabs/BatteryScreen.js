@@ -1,18 +1,15 @@
 import React from 'react';
-import { Text, View, Button, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import DeviceBattery from 'react-native-device-battery';
-
+import styles from '../styles/BatteryStyle';
 
 export default class BatteryScreen extends React.Component {
-
-    levelBattery = 0
-    isChargingBattery = false
 
     static navigationOptions = {
         tabBarLabel: 'Battery',
         tabBarIcon: ({ tintColor }) => (
             <Image source={require('../images/battery.png')}
-                style={{ width: 22, height: 22, tintColor: 'black' }}>
+                style={styles.imageNav}>
             </Image>
         )
     }
@@ -20,49 +17,45 @@ export default class BatteryScreen extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            level: 0,
+            charging: false
+        }
+
         var onBatteryStateChanged = (state) => {
-            this.levelBattery = state.level
-            this.isChargingBattery = state.charging
-            this.forceUpdate()
-          };
 
-          DeviceBattery.addListener(onBatteryStateChanged);
+            this.setState({ level: state.level })
+            this.setState({ charging: state.charging })
+        };
+
+        DeviceBattery.addListener(onBatteryStateChanged);
     }
-
 
 
     componentWillMount() {
         DeviceBattery.getBatteryLevel().then(level => {
-            this.levelBattery = level
+            this.setState({ level: level })
+
             DeviceBattery.isCharging().then(isCharging => {
-                this.isChargingBattery = isCharging
-                this.forceUpdate()
+                this.setState({ charging: isCharging })
             });
         });
     }
 
     render() {
-
-        var levelString = Math.trunc(this.levelBattery * 100) + '%'
+        var levelString = Math.trunc(this.state.level * 100) + '%'
         var chargingString = ""
-        if (this.isChargingBattery == true) {
+        if (this.state.charging == true) {
             chargingString = "ON"
         } else {
             chargingString = "OFF"
         }
-        return <View style={
-            {
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center'
-            }
-        }>
-            <Text style={{
-                fontSize: 30
-            }}>Battery Level : {levelString}</Text>
-            <Text style={{
-                fontSize: 30
-            }}>Is charging : {chargingString}</Text>
+        // return (
+        //     <BatteryView />
+        // );
+        return <View style={styles.container}>
+            <Text style={styles.text}>Battery Level : {levelString}</Text>
+            <Text style={styles.text}>Is charging : {chargingString}</Text>
 
         </View>
     }
