@@ -3,6 +3,7 @@ package com.myphoneapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.sensors.RNSensorsPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.reactcommunity.rnlanguages.RNLanguagesPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSensorsPackage(),
             new MapsPackage(),
             new RNLanguagesPackage(),
             new RNI18nPackage(),
