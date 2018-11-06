@@ -13,8 +13,8 @@ import SensorController from './controllers/SensorController';
 console.disableYellowBox = true
 
 var MainScreenNavigator = TabNavigator({
-  Tab1: { screen: VibrationController},
-  Tab2: { screen: ContactsController},
+  Tab1: { screen: ContactsController},
+  Tab2: { screen: VibrationController},
   Tab3: { screen : LocationController},
   Tab4: { screen : BatteryController},
   Tab5: { screen : LanguageController},

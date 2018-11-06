@@ -16,18 +16,13 @@ export default class VibrationController extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.load()
-        this.props.navigation.addListener('willFocus', this.load)
-    }
-    load = () => {
+    funcVib() {
         Vibration.vibrate(500);
     }
 
-
     render() {
         return (
-            <VibrationView />
+            <VibrationView func={this.funcVib}/>
         );
     }
 }

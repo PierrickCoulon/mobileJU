@@ -20,5 +20,9 @@ export default StyleSheet.create({
     text: {
         paddingTop: 30,
         fontSize: 30
+    },
+    button: {
+        fontSize: 30,
+        paddingTop: 30
     }
  })
