@@ -10,6 +10,7 @@ import VibrationController from './controllers/VibrationController';
 import LanguageController from './controllers/LanguageController';
 // import SensorController from './controllers/SensorController';
 import ButtonController from './controllers/ButtonController';
+import ColorsController from './controllers/ColorsController';
 
 console.disableYellowBox = true
 
@@ -21,6 +22,7 @@ var MainScreenNavigator = TabNavigator({
   Tab5: { screen : LanguageController},
   // Tab6: { screen : SensorController},
   Tab7: { screen : ButtonController},
+  Tab8: { screen : ColorsController},
 }, {
   tabBarPosition: 'bottom',
   swipeEnabled: false,
