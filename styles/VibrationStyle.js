@@ -23,6 +23,6 @@ export default StyleSheet.create({
     },
     button: {
         fontSize: 30,
-        paddingTop: 30
+        paddingTop: 30,
     }
  })
