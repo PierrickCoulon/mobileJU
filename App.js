@@ -8,7 +8,7 @@ import BatteryController from './controllers/BatteryController';
 import ContactsController from './controllers/ContactsController';
 import VibrationController from './controllers/VibrationController';
 import LanguageController from './controllers/LanguageController';
-// import SensorController from './controllers/SensorController';
+import SensorController from './controllers/SensorController';
 import ButtonController from './controllers/ButtonController';
 import ColorsController from './controllers/ColorsController';
 import DateTimeController from './controllers/DateTImeController';
@@ -21,7 +21,7 @@ var MainScreenNavigator = TabNavigator({
   Tab3: { screen : LocationController},
   Tab4: { screen : BatteryController},
   Tab5: { screen : LanguageController},
-  // Tab6: { screen : SensorController},
+  Tab6: { screen : SensorController},
   Tab7: { screen : ButtonController},
   Tab8: { screen : ColorsController},
   Tab9: { screen : DateTimeController},
@@ -34,8 +34,7 @@ var MainScreenNavigator = TabNavigator({
     activeTintColor: 'white',
     activeBackgroundColor: 'lightblue',
     labelStyle: {
-      fontSize: 12,
-      padding: 0,
+      fontSize: 8,
     }
   }
 });
@@ -43,6 +42,7 @@ var MainScreenNavigator = TabNavigator({
 MainScreenNavigator.navigationOptions = {
   title: "Menu"
 }
+
 
 export default MainScreenNavigator;
 
