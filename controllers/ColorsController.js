@@ -54,7 +54,7 @@ export default class ColorsController extends React.Component {
             name: this.state.text,
             id: this.state.names.length
         }
-       this.setState({names:  this.state.names.concat(newTab)})
+       this.setState({names: this.state.names.concat(newTab)})
        this.setState({text: 'Click here to add new color'})
     }
     render() {
@@ -74,8 +74,8 @@ export default class ColorsController extends React.Component {
                 <TextInput
                     style={{height: 50, borderColor: 'black', borderWidth: 2, alignItems: 'center', justifyContent: 'center', backgroundColor: 'gray', textAlign: 'center', marginTop: 20}}
                     onBlur={this.addColor}
-                    onChangeText={(text) => this.setState({text})}
                     value={this.state.text}
+                    onChangeText={(text) => this.setState({text})}
                 />
             </View>
         );
