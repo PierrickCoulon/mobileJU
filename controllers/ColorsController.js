@@ -42,9 +42,14 @@ export default class ColorsController extends React.Component {
         this.addColor = this.addColor.bind(this)
     }
 
-
     removeColor(e) {
         let filteredArray = this.state.names.filter(item => item.id !== e)
+
+        var i = 0;
+        filteredArray.forEach(element => {
+            element.id = i;
+            i++;
+        });
         this.setState({ names: filteredArray });
     }
 
